@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Message App</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="mycntrl">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <span class="navbar-brand" href="#">Message-App</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" ng-if="isLoggedin">
+                        <a class="nav-link" href="#/home">Home</a>
+                    </li>
+                    <li class="nav-item" ng-if="isLoggedin">
+                        <a class="nav-link" href="#/message">Messages</a>
+                    </li>
+                </ul>
+
+                <div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item" ng-if="!isLoggedin">
+                            <a class="nav-link" href="#/login" style="color:white;">Login</a>
+                        </li>
+                        <li class="nav-item" ng-if="!isLoggedin">
+                            <a class="nav-link" href="#/signup" style="color: white;">Register</a>
+                        </li>
+                        <li class="nav-item" ng-if="isLoggedin">
+                            <a class="nav-link" href="#/login" ng-click="Logout()" style="background: red;color: white;">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div ng-view=""></div>
+    </div>
+
+
+    <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+
+    <script src="JS/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <form name=myForm>
+            <div class="form-group input-group">
+                <!--<div class="input-group-prepend">-->
+                    <!--<span class="input-group-text"> <i class="fa fa-user"></i> </span>-->
+                <!--</div>-->
+                <input name="" class="form-control" placeholder="First name" type="text" ng-model="signup.firstname" required>
+            </div>
+            <div class="form-group input-group">
+
+                <input name="" class="form-control" placeholder="Last name" type="text" ng-model="signup.lastname" required>
+            </div>
+            <div class="form-group input-group">
+
+                <input class="form-control" placeholder="Username" type="text" ng-model="signup.username" required>
+            </div>
+            <div class="form-group input-group">
+
+                <input class="form-control" placeholder="Password" type="password" ng-model="signup.password" required>
+            </div>
+            <div class="form-group input-group">
+
+                <select class="custom-select" style="max-width: 60px;">
+                    <option selected="">+1</option>
+                </select>
+                <input name="" class="form-control" placeholder="Phone number" ng-minlength="10"
+                       ng-maxlength="10"  type="text" ng-model="signup.phone" required>
+            </div>
+            <div class="form-group input-group">               
+                <input class="form-control" type="radio" ng-model="signup.gender" value="Male" required>Male
+                <input class="form-control" type="radio" ng-model="signup.gender" value="Female" required>Female
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="myForm.$invalid" ng-click="submitNewUser()"> Create Account </button>
+            </div>
+            <p class="text-center">Have an account? <a href="#/login">Log In</a> </p>
+        </form>
+    </article>
+</div>

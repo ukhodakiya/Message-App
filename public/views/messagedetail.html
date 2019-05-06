@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="col-md-16 mt-5" ng-repeat="x in messagedetaildata"> <hr>
+        <p>{{x.messageBody}}</p>        
+        <div class=" d-inline form-check mr-2">
+            <input type="checkbox" ng-change="markImportant()" ng-model="chkselct">
+            <label class="form-check-label" for="exampleCheck1">Mark Important</label>
+        </div>
+        <button class="btn btn-danger btn-sm d-inline" ng-click="DeleteMessage(x._id)">Delete</button>
+        <button class="btn btn-primary btn-sm" ng-click="BacktoList()">Back</button>        
+        <div class="alert alert-info" role="alert" style="margin-top: 10px" ng-if="showhideMsg">
+                {{updatedMsgforImpField}}
+        </div>        
+    </div>
+    
+    <div class="form-group mt-4">
+        <label> Reply to message: </label>
+        <select class="form-control form-control-sm col-2 d-inline" name="repeatSelect" id="repeatSelect" ng-model="msg.username">
+            <option ng-repeat="val in data.availableOptions" ng-value="{{val}}">{{val}}</option>
+            <option style="display:none" value="">select user</option>
+        </select>
+        <form name="myForm">
+        <input type="text" class="form-control col-3" placeholder="Enter title" ng-model="msg.messageTitle" required>
+        <input type="text" class="form-control col-7 mt-1" placeholder="Enter message" ng-model="msg.messageBody" required>
+        <button type="submit" class="btn btn-success d-inline btn-sm mt-2" ng-click="Sendmessage()" ng-disabled="myForm.$invalid">Send Message</button>
+        </form>
+    </div>
+    <hr>
+</div>

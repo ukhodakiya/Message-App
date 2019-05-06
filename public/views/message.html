@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="form-group mt-4">
+        <label> Select user to send message: </label>
+        <select class="form-control form-control-sm col-2 d-inline" name="repeatSelect" id="repeatSelect" ng-model="msg.username">
+            <option ng-repeat="val in data.availableOptions" ng-value="{{val}}">{{val}}</option>
+            <option style="display:none" value="">select user</option>
+        </select>
+        <form name="myForm">
+        <input type="text" class="form-control col-3" placeholder="Enter title" ng-model="msg.messageTitle" required>
+        <input type="text" class="form-control col-7 mt-1" placeholder="Enter message" ng-model="msg.messageBody" required>
+        <button type="submit" class="btn btn-warning d-inline btn-sm mt-2" ng-click="Sendmessage()" ng-disabled="myForm.$invalid">Send Message</button>
+        </form>
+    </div>
+
+    <div class="col-md-16 mt-4" ng-repeat="x in messagedata">
+        <h5>{{x.messageTitle}}</h5>
+        <a class="btn btn-primary btn-sm" href="#/messagedetail/{{x._id}}">Detail</a>
+        <hr>
+    </div>
+</div>
